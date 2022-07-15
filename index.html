@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <!-- Css link  -->
+    <!-- CSS link -->
     <link rel="stylesheet" href="style.css">
     <title>Form Validation</title>
 </head>
@@ -19,41 +19,41 @@
         </div>
         <form class="w-50 container">
             <div class="mb-3">
-                <label for="firstName" class="form-label">First Name</label>
+                <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="firstName" required>
                 <span id="firstNameErr" class="form-text text-danger">First Name cannot be empty.</span>
             </div>
             <div class="mb-3">
-                <label for="lastName" class="form-label">Last Name</label>
+                <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="lastName" required>
                 <span id="lastNameErr" class="form-text text-danger">Last Name cannot be empty.</span>
             </div>
             <div class="mb-3">
-                <label for="age" class="form-label">Age</label>
+                <label for="age" class="form-label">Age <span class="text-danger">*</span></label>
                 <input type="number" min="18" max="150" value="0" class="form-control" id="age"required>
                 <span id="ageErr" class="form-text text-danger">Age cannot be empty.</span>
             </div>
             <div class="mb-3">
-                <label for="contact" class="form-label">Contact No.</label>
+                <label for="contact" class="form-label">Contact No. <span class="text-danger">*</span></label>
                 <input type="number" size="11" class="form-control" id="contact">
                 <span id="contactErr" class="form-text text-danger">Contact number must be 11 digits.</span>
             </div>
             <div class="mb-3">
-                <label for="emails" class="form-label">Notification Emails</label>
-                <textarea class="form-control" id="emails" rows="3" required></textarea>
+                <label for="emails" class="form-label">Notification Emails <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="emails" rows="3" placeholder="Separate emails with commas ( , )" required></textarea>
                 <span id="emailsErr" class="form-text text-danger">Notification Emails cannot be empty.</span>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" minlength="8" class="form-control" id="password">
-                <span id="passwordErr" class="form-text text-danger">Password must have minimum 8 characters and must include atleast 1 alphabet, 1 number, 1 uppercase letter & 1 lowercase.</span>
+                <span id="passwordErr" class="form-text text-danger">Password must have minimum 8 characters and must include atleast 1 alphabet, 1 number, 1 uppercase letter & 1 lowercase. (No spaces)</span>
             </div>
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="confirmPassword">
                 <span id="confirmPasswordErr" class="form-text text-danger">Password did not match.</span>
             </div>
-            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            <button  id="submitBtn" class="btn btn-primary mb-3">Submit</button>
         </form>
     </section>
 
