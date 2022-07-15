@@ -197,8 +197,10 @@ function checkConfirmPassword(){
 // Enabling the button
 
 function enableBtn(){
-    if(_firstName.length > 0 && _lastName.length > 0 &&  (_age >= 18 && _age <= 150) && _emails.length > 0 && _contact.length == 11){
+    if(_firstName.length > 0 && _lastName.length > 0 &&  (_age >= 18 && _age <= 150) && _emails.length > 0 && _contact.length == 11 && _password.length >=8 && _confirmPassword == _password){
         submitBtn.disabled = false;
+    }else{
+        submitBtn.disabled = true;
     }
 }
 
