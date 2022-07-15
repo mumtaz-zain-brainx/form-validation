@@ -21,30 +21,37 @@
             <div class="mb-3">
                 <label for="firstName" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstName" required>
+                <span id="firstNameErr" class="form-text text-danger">First Name cannot be empty.</span>
             </div>
             <div class="mb-3">
                 <label for="lastName" class="form-label">Last Name</label>
                 <input type="text" class="form-control" id="lastName" required>
+                <span id="lastNameErr" class="form-text text-danger">Last Name cannot be empty.</span>
             </div>
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
-                <input type="number" min="18" max="150" class="form-control" id="age"required>
+                <input type="number" min="18" max="150" value="0" class="form-control" id="age"required>
+                <span id="ageErr" class="form-text text-danger">Age cannot be empty.</span>
             </div>
             <div class="mb-3">
                 <label for="contact" class="form-label">Contact No.</label>
                 <input type="number" size="11" class="form-control" id="contact">
+                <span id="contactErr" class="form-text text-danger">Contact number must be 11 digits.</span>
             </div>
             <div class="mb-3">
                 <label for="emails" class="form-label">Notification Emails</label>
                 <textarea class="form-control" id="emails" rows="3" required></textarea>
+                <span id="emailsErr" class="form-text text-danger">Notification Emails cannot be empty.</span>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" minlength="8" class="form-control" id="password">
+                <span id="passwordErr" class="form-text text-danger">Password must have minimum 8 characters and must include atleast 1 alphabet, 1 number, 1 uppercase letter & 1 lowercase.</span>
             </div>
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="confirmPassword">
+                <span id="confirmPasswordErr" class="form-text text-danger">Password did not match.</span>
             </div>
             <button type="submit" class="btn btn-primary mb-3">Submit</button>
         </form>
