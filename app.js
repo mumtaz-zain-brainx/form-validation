@@ -209,7 +209,6 @@ submitBtn.addEventListener("click",print);
 // Displaying Results 
 
 function print(e){
-    e.preventDefault()
     alert(`
         First Name: ${_firstName}
         Last Name: ${_lastName}
