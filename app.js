@@ -32,6 +32,7 @@ var _confirmPassword = "";
 
 
 submitBtn.disabled = true; // Disabling submit button
+submitBtn.style.opacity = 0.4;
 
 
 // Hidding Error Messages
@@ -135,12 +136,21 @@ function checkEmails(){
 
         var emailsList = [];
         emailsList= val.split(",");
-
+        console.log(emailsList)
+        var lastEle = emailsList[emailsList.length-1];
+        if(lastEle=='' || lastEle=='\n' || lastEle=='\t' || lastEle==' '){
+            emailsList.pop()
+            console.log(emailsList,'adddddddddd')
+        }
         for(e of emailsList){
-            if (!e.toLowerCase().match(emailRegEx)){
+            var emailVal = e.replace(/^\s+|\s+$/gm,'');
+            emailVal = emailVal.trim();
+            console.log(emailVal)
+            if (!emailVal.toLowerCase().match(emailRegEx)){
                 emailsErr.innerHTML = "Enter valid email(s) address(s).";
                 emailsErr.style.display = "block"
                 _emails = [];
+                enableBtn();
                 return;
             }
         }
@@ -199,8 +209,10 @@ function checkConfirmPassword(){
 function enableBtn(){
     if(_firstName.length > 0 && _lastName.length > 0 &&  (_age >= 18 && _age <= 150) && _emails.length > 0 && _contact.length == 11 && _password.length >=8 && _confirmPassword == _password){
         submitBtn.disabled = false;
-    }else{
+        submitBtn.style.opacity = 1;
+    } else{
         submitBtn.disabled = true;
+        submitBtn.style.opacity = 0.4;
     }
 }
 
